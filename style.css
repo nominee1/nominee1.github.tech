@@ -1,0 +1,554 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    appearance: none;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+
+}
+:root{
+    --background: rgb(235, 235, 235);
+    --white: rgb(255, 255, 255);
+    --theme-color: #077e7e ;
+    --box-shadow: 0 0.2rem 1rem gray;
+    
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    user-select: none;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    background: var(--background);
+}
+
+span{
+    color: rgba(6, 24, 37, 0.9);
+    font-size: 14px;
+}
+h1 {
+    color: var(--white);
+}
+h2 {
+    color: var(--white);
+}
+h3 {
+    color: var(--white);
+}
+h4 {
+    color: var(--white);
+}
+.section{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+.navbar{
+    display: flex;
+    width: 100%;
+    height: 5rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+.navbar .taskbar{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+
+
+}
+.navbar .logo{
+    height: 5rem;
+}
+.navbar .logo img{
+    width: 4rem;
+    height: 4rem;
+}
+.navbar .left{
+    display: flex;
+    height: fit-content;
+    gap: 1rem;
+    justify-content: space-between;
+
+
+}
+.logout{
+    display: flex;
+}
+.greet{
+    display: flex;
+    color: var;
+    align-items: center;
+    border-radius: 0.2rem;
+    padding: 0.2rem;
+    background: var(--theme-color) ;
+    
+}
+.username{
+    display: flex;
+    color: var;
+    padding: 0.2rem;
+    align-items: center;
+    border-radius: 0.2rem;
+    background: var(--theme-color) ;
+}
+.username h4{
+    padding: 0.2rem;
+}
+.section .balance{
+    display: flex;
+    width: 100%;
+    height: 35%;
+    align-items: center;
+    justify-content: center;
+    
+}
+.section .balance .balance_card{
+    display: flex;
+    background-color: var(--theme-color);
+    
+    height: 90%;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    border-radius: 1rem;
+    
+}
+.section .balance .balance_card .balance_heading{
+    display: flex;
+    height: fit-content;
+}
+
+.section .balance .balance_card .balance_content{
+    display: flex;
+}
+
+.section .deposit_section{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+}
+.section .deposit_section .Deposit{
+    display: flex;
+    
+}
+.section .deposit_section .Deposit button{
+    background-color: var(--theme-color);
+    border: none;
+    font-size: 15px;
+    color: white;
+    cursor: pointer;
+    border-radius: 0.3rem;
+    padding: 1rem;
+    box-shadow: 0 0.2rem 1rem gray;
+    transition: 400ms;
+
+    
+}
+.section .deposit_section .Withdraw button{
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    color: rgba(6, 24, 37, 0.9);
+    border-radius: 0.3rem;
+    padding: 1rem;
+    box-shadow: 0 0.2rem 1rem gray;
+    transition: 400ms;
+    
+}
+.section .deposit_section .Withdraw button:hover{
+    box-shadow: none;
+    color: white;
+    background-color:  rgba(37, 66, 87, 0.9);
+}
+.section .deposit_section .Deposit button:hover{
+    box-shadow: none;
+    color: white;
+    background-color:  rgba(37, 66, 87, 0.9) ;
+}
+.section .transaction_section{
+    display: flex;
+    margin-top: 0.5rem;
+    justify-content: center;
+    height: 40%;
+}
+.section .transaction_section .transactions{
+    width: 40%;
+    border-radius: 0.5rem;
+
+    height: 100%;
+    background-color: var(--white) ;
+
+
+}
+.section .transaction_section .transaction_heading{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 0.2rem;
+    background: var(--theme-color);
+}
+
+.section .transaction_section .transactions .transaction_history{
+    display: flex;
+    overflow-y: scroll;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 1rem;
+    height: 100%;
+    align-items: center;
+    gap: 1rem;
+
+}
+    .section .transaction_section .transactions .transaction_history span{
+        display: flex;
+        background: var(--background);
+        width: 70%;
+        padding: 0.7rem;
+        
+    }
+    .section .transaction_section .transactions .transaction_history span img{
+        width: 1rem;
+    }
+    .deposit_container{
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        transition: display 400ms ease-in-out;
+
+
+    }
+    .withdraw_container{
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        transition: display 400ms ease-in-out;
+
+
+    }
+    .deposit_container .deposit .exit{
+        position: relative;
+        display: block;
+        z-index: 1001;
+        /* background: ; */
+        /* right: -50;
+        top: -50; */
+    }
+    .withdraw_container .withdraw .exit2{
+        display: flex;
+        position: relative;
+        z-index: 1001;
+        width: 100%;
+        height: 100%;
+    
+    }
+    .deposit_container .deposit .exit img{
+        position: absolute;
+        transition: 300ms;
+        border-radius: 50%;
+        right: 0.2rem;
+        width: 1.5rem;
+        border: none;
+        
+    }
+    .withdraw_container .withdraw .exit2 img{
+        position: absolute;
+        transition: 300ms;
+        border-radius: 50%;
+        right: 0.2rem;
+        width: 1.5rem;
+        border: none;
+        
+    }
+    
+    
+    .deposit_container .deposit .exit img:hover{
+        border: 0.1rem solid var(--theme-color);
+       
+    }
+    .withdraw_container .withdraw .exit2 img:hover{
+        border: 0.1rem solid var(--theme-color);
+       
+    }
+    .deposit{
+        position: relative;
+        background: var(--white);
+        width: 30vw;
+        height: 50vh;
+        border-radius: 1rem;
+        gap: 1rem;
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;
+        box-shadow: var(--box-shadow);
+        justify-content: center;
+
+    }
+    .withdraw{
+        position: relative;
+        background: var(--white);
+        width: 30vw;
+        height: 50vh;
+        border-radius: 1rem;
+        gap: 1rem;
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;
+        box-shadow: var(--box-shadow);
+        justify-content: center;
+
+    }
+ 
+   
+    .kes{
+        display: flex;
+        
+    }
+    .kes span{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+    }
+    .kes span img{
+        width: 1.5rem;
+    }
+    .USD{
+        display: flex;
+        
+    }
+    .USD span{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+    }
+    .USD span img{
+        width: 1.5rem;
+    }
+    /* Container for the input field */
+.input {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  /* Styling for the input field */
+  .input-field {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  /* Styling for the input field when focused */
+  .input-field:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  /* Placeholder text in the input field */
+  .input-field::placeholder {
+    color: #999;
+  }
+  
+  /* Label above the input field */
+  .input-label {
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    background-color: white;
+    padding: 0 5px;
+    font-size: 12px;
+    color: #666;
+  }
+  
+  /* Label above the input field when the field is focused or has value */
+  .input-field:focus ~ .input-label,
+  .input-field:not(:placeholder-shown) ~ .input-label {
+    /* top: -18px; */
+    font-size: 10px;
+    color: #007bff;
+  }
+
+
+  /* login */
+  .login-container {
+      gap: 2rem;
+      background: var(--background);
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      
+    }
+    .login-container .deriv{
+        display: flex;
+        width: 20%;
+    }
+    
+  .form-container {
+    display: flex;
+    padding: 2rem;
+    justify-content: center;
+    border-radius: 0.5rem;
+    flex-direction: column;
+    align-items: center;
+    border:solid 0.1rem var(--theme-color);
+  }
+
+  .form-group {
+    position: relative;
+    width: 300px;
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .form-group input {
+    width: 100%;
+    padding: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.7rem;
+  }
+
+  
+  .form-group input:focus {
+    border-radius: 1rem var(--theme-color);
+    
+  }
+
+  .reveal-icon {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+
+  .submit-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--theme-color);
+    color: white;
+    cursor: pointer;
+    width: 100%;
+  }
+  .low{
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: center;
+      width: 100%;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+   
+    @media (max-width: 768px){
+       
+        .login-container {
+           overflow-x: hidden;
+           gap: 0.7rem;
+            
+          }
+          .form-container {
+           padding: 2rem;
+          }
+          .form-group {
+            position: relative;
+            width: 200px;
+            margin-bottom: 20px;
+          }
+        
+          .form-group label {
+            display: block;
+            margin-bottom: 2px;
+            font-size: 13px;
+          }
+        
+          .form-group input {
+            width: 100%;
+            font-size: 14px;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 0.2rem;
+          }
+        
+          
+          .form-group input:focus {
+            border-radius: 1rem var(--theme-color);
+            
+          }
+          small{
+            font-size: 14px;
+          }
+          .low .heading small{
+            font-size: 10px;
+          }
+          button{
+            padding: 0.7rem;
+            font-size: 12px;
+          }
+           
+          .form-group input {
+            width: 100%;
+            font-size: 12px;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 0.2rem;
+          }
+        
+
+    
+    
+      }
+    
+      @media (max-width: 540px){
+        .form-container {
+            padding: 1rem;
+           }
+           .form-group {
+             position: relative;
+             width: 230px;
+             margin-bottom: 20px;
+           }
+       
+      
+    
+    
+      }
+    
+      @media (max-width: 320px){
+        small{
+            font-size: 12px;
+          }
+     
+    
+    }

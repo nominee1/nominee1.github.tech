@@ -1,0 +1,226 @@
+@media (max-width: 1200px) {
+   
+    .container{
+        height: fit-content;
+
+    }
+
+  }
+@media (max-width: 1024px) {
+   
+    .container{
+        height: fit-content;
+        overflow-y: scroll;
+    }
+    .get_active_symbols{
+        margin-top: 1rem;
+
+    }
+}
+    
+
+  
+  @media (min-width: 820px) and (max-width: 1024px) {
+    
+    .last_digit{
+        gap: 0.5rem;
+    }
+    .choices{
+        gap: 0.2rem;
+    }
+    .sideA{
+      margin-right: 2rem;
+    }
+
+
+  }
+
+  @media (max-width: 768px){
+    .container{
+        height: fit-content;
+        
+        font-size: 18px;
+
+    }
+    button{
+        padding: 0.4rem;
+        font-size: 15px;
+
+    }
+    h1{
+        font-size: 24px;
+    }
+    .choices .match .purchase{
+    border: 1px solid var(--color-theme);
+    padding: 0.4rem;
+    }
+    .last_digit{
+        gap: 1rem;
+    }
+    .last_digit .sideA{
+        width: 200px;
+    }
+  .last_digit .sideA .progress-bar,.progress-bar2 {
+    height: 30px;
+  }
+  .last_digit .even_odd{
+    gap: 0.2rem;
+  }
+  .last_digit .even, .over{
+    padding: 0.6rem;
+  }
+  .last_digit .odd, .under{
+    padding: 0.6rem;
+  }
+  .digits__pie-progress{
+    width: 105px;
+    height: 105px;
+  }
+  .choices{
+   gap: 1rem;
+  }
+  .sideA{
+    margin-right: 2rem;
+  }
+
+
+  }
+
+  @media (max-width: 540px){
+    body{
+      overflow-x: hidden;
+    }
+    .choices{
+        flex-direction: column;
+    }
+    .last_digit{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .digits_space{
+      background: none;
+    }
+    .digits__digit-display-value {
+      top: 35%;
+      left: 50%;
+    }
+    .nav {
+      flex-direction: column;
+      gap: 0;
+    }
+   
+    .nav .login{
+      margin-bottom: 0.5rem;
+    }
+    .nav .login button{
+      padding: 0.1rem;
+      font-size: 14px;
+
+    }
+
+
+  }
+
+
+
+  @media (max-width: 425px){
+    .choices{
+        gap: 0.5rem;
+        flex-direction: column;
+        /* flex-wrap: wrap; */
+        align-items: center;
+
+       }
+  .choose .choice_one .heading,.choice_two .heading, .choose_even  .heading{
+    width: 60px;
+    height: fit-content;
+  }
+  .get_active_symbols{
+    justify-content: center;
+    gap: 0.2rem;
+  }
+ 
+  button{
+    font-size: 14px;
+  }
+  .get_active_symbols .drop-down{
+    width: fit-content;
+  }
+  select {
+    font-size: 9px;
+    width: fit-content;
+  }
+   .last_digit{
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem;
+    flex-direction: column;
+    }
+    .last_digit .sideA{
+        width: 80%;
+    }
+  .last_digit .sideA .progress-bar,.progress-bar2 {
+    height: 30px;
+
+  }
+  .last_digit .even_odd{
+    gap: 0.2rem;
+    padding: 0.2rem;
+  }
+  .last_digit .even, .over{
+    padding: 0.6rem;
+    font-size: 14px;
+    border-radius: 20%;
+    border-radius: 20%;
+  }
+  .last_digit .odd, .under{
+    border-radius: 20%;
+    padding: 0.6rem;
+    font-size: 14px;
+
+  }
+  .digits__pie-progress{
+    width: 95px;
+    height: 95px;
+  }
+  
+  }
+
+  @media (max-width: 320px){
+  .get_active_symbols{
+      width: 100%;
+      margin: 0;
+  }
+  .get_active_symbols button{
+      font-size: 12px;
+  }
+    .digits__pie-progress{
+        width: 90px;
+        height: 90px;
+    }
+    
+  .digits_space{
+    gap: 0.5rem;
+    padding: 0.2rem;
+    box-shadow: none;
+  }
+  .subscribe_ticks{
+      display: flex;
+      gap: 0.4rem;
+    }
+    .subscribe_ticks button{
+        padding: 0.2rem;
+        gap: 2px;
+    }
+    .subscribe_ticks #ticks-history{
+        display: none;
+    }
+
+}
+    
+
+
+
+
+  

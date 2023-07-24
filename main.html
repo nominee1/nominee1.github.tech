@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="media.css">
+    <title>Denara</title>
+  </head>
+  <body>
+    <div class="nav">
+      <div class="logo"><img src="logo2.png" alt="Denara" srcset=""></div>
+      <div class="login">
+        <a href="index.html"><button class="Sign" onclick="redirectToPage()">Sign In</button></a></div>
+    </div>
+    <div class="container">
+     
+
+      <div class="get_active_symbols">
+        <div class="market">
+          <button class="drop-down" id="activeSymbols">Market</button>
+          <select class="marketSelection">
+                <option class="Volatility10" value="R_10">Volatility 10 index</option>
+                <option class="Volatility10s" value="1HZ10V">Volatility 10(1s) index</option>
+                <option class="Volatility25" value="R_25">Volatility 25 index</option>
+                <option class="Volatility25s" value="1HZ25V">Volatility 25(1s) index</option>
+                <option class="Volatility50" value="R_50">Volatility 50 index</option>
+                <option class="Volatility50s" value="1HZ50V">Volatility 50(1s) index</option>
+                <option class="Volatility75" value="R_75">Volatility 75 index</option>
+                <option class="Volatility75s" value="1HZ75V">Volatility 75(1s) index</option>
+                <option class="Volatility100" value="R_100">Volatility 100 index</option>
+                <option class="Volatility100s" value="1HZ100V">Volatility 100(1s) index</option>
+            
+            <!-- Add more options as needed -->
+          </select>
+
+        </div>
+       
+        <div class="Strategies_container">
+          <button class="drop-down">Strategy</button>
+          <select class="strategy">
+               <option class="strategy4"><small>Matches</small></option>
+                <option class="strategy1"><small>Over</small></option>
+                <option class="strategy2"><small>Under</small></option>
+                <option class="strategy3"><small>Even</small></option>
+                <option class="strategy4"><small>Odd</small></option>
+                <option class="strategy4"><small>Differs</small></option>
+                <option class="strategy4"><small>Rise</small></option>
+                <option class="strategy4"><small>Fall</small></option>
+          </select>
+
+        </div>
+      
+      </div>
+
+      <div class="subscribe_ticks">
+        <button class="start" id="ticks">Start Analysis</button>
+        <button id="ticks-unsubscribe">Stop Analysis</button>
+        <!-- <button id="ticks-history">Get Ticks History</button> -->
+      </div>
+
+      <div class="choices">
+          <div class="choose">
+            <div class="choice_one">
+              <div class="heading"> Over</div>
+
+              <div class="Over_choice">
+                <button class="over_button_one">1</button>
+                <button class="over_button_two">2</button>
+                <button class="over_button_three">3</button>
+                <button class="over_button_four">4</button>
+                <button class="over_button_five">5</button>
+                <button class="over_button_six">6</button>
+                <button class="over_button_seven">7</button>
+                <button class="over_button_eight">8</button>
+              </div>
+            </div>
+            <div class="choice_two">
+              <div class="heading"> Under</div>
+              <div class="under_choice">
+                <button class="under_button_one">1</button>
+                <button class="under_button_two">2</button>
+                <button class="under_button_three">3</button>
+                <button class="under_button_four">4</button>
+                <button class="under_button_five">5</button>
+                <button class="under_button_six">6</button>
+                <button class="under_button_seven">7</button>
+                <button class="under_button_eight">8</button>
+              </div>
+            </div>
+          
+          </div>
+
+          <div class="choose_again">
+            <div class="choose_even">
+              <div class="heading"> Even <br>Odd</div>
+              <div class="even_choice">
+              <button class="button_one">Start</button>
+              </div>
+            </div>
+            <!-- <div class="choose_even">
+              <div class="heading"> Odd</div>
+              <div class="odd_choice">
+                <button class="button_one">Start</button>
+              </div>
+            </div> -->
+          </div>
+
+          <div class="match">
+            <button  class="countdown-button">Exact digit</button>
+            <div class="heading">
+             <div class="countdown">Scan</div>
+            </div>
+            <div class="purchase"><h1>7</h1></div>
+          </div>
+      </div>
+
+     <!-- Progress bar -->
+     <div class="last_digit">
+      <div class="sideA">
+        
+        <div class="progress-bar">
+          <div class="progress"></div>
+          <h5 class="percent">0%</h5>
+
+        </div>
+        <div class="progress-bar2">
+          <div class="progress2"></div>
+          <h5 class="percent2">0%</h5>
+
+        </div>
+
+      </div>
+     
+ 
+
+
+      
+        <div class="even_odd"> 
+          <div class="even">Even</div>
+          <div class="odd">Odd</div>
+        </div>
+      
+        <div ><h1 class="number">0</h1></div>
+        <div class="over_under">
+          <div class="over"> Over</div>
+          <div class="under">Under</div>
+        </div>
+     
+     </div>
+
+
+      <div class="digits_space">
+        <div class="digits__digit">
+          <div class="digits__pie-container">
+            <svg class="digits__pie-progress" width="120" height="120" viewBox="0 0 120 120">
+              <circle class="progress__bg red" cx="60" cy="60" r="54" fill="none" stroke="#E8EEFC" stroke-width="12"></circle>
+              <circle class="progress__value one" cx="60" cy="60" r="54" fill="none" stroke-opacity="0.6175" stroke-width="12" stroke-dasharray="119.88317333333332,219.40882666666667" stroke-dashoffset="229.58758666666665"></circle>
+            </svg>
+          </div>
+          <span class="digits__digit-value">
+            <i class="digits__digit-display-value"><h3>0</h3></i>
+            <i class="digits__digit-display-percentage nono">0</i>
+          </span>
+        </div>
+
+        <div class="digits__digit">
+          <div class="digits__pie-container">
+            <svg class="digits__pie-progress" width="120" height="120" viewBox="0 0 120 120">
+              <circle class="progress__bg red" cx="60" cy="60" r="54" fill="none" stroke="#E8EEFC" stroke-width="12"></circle>
+              <circle class="progress__value two" cx="60" cy="60" r="54" fill="none" stroke-opacity="0.6175" stroke-width="12" stroke-dasharray="119.88317333333332,219.40882666666667" stroke-dashoffset="229.58758666666665"></circle>
+            </svg>
+          </div>
+          <span class="digits__digit-value">
+            <i class="digits__digit-display-value"><h3>1</h3></i>
+            <i class="digits__digit-display-percentage achiel">0</i>
+          </span>
+        </div>
+        <div class="digits__digit">
+          <div class="digits__pie-container">
+            <svg class="digits__pie-progress" width="120" height="120" viewBox="0 0 120 120">
+              <circle class="progress__bg red" cx="60" cy="60" r="54" fill="none" stroke="#E8EEFC" stroke-width="12"></circle>
+              <circle class="progress__value three" cx="60" cy="60" r="54" fill="none" stroke-opacity="0.6175" stroke-width="12" stroke-dasharray="119.88317333333332,219.40882666666667" stroke-dashoffset="229.58758666666665"></circle>
+            </svg>
+          </div>
+          <span class="digits__digit-value">
+            <i class="digits__digit-display-value"><h3>2</h3></i>
+            <i class="digits__digit-display-percentage ariyo">0</i>
+          </span>
+        </div>
+        <div class="digits__digit">
+          <div class="digits__pie-container">
+            <svg class="digits__pie-progress" width="120" height="120" viewBox="0 0 120 120">
+              <circle class="progress__bg red" cx="60" cy="60" r="54" fill="none" stroke="#E8EEFC" stroke-width="12"></circle>
+              <circle class="progress__value four" cx="60" cy="60" r="54" fill="none" stroke-opacity="0.6175" stroke-width="12" stroke-dasharray="119.88317333333332,219.40882666666667" stroke-dashoffset="229.58758666666665"></circle>
+            </svg>
+          </div>
+          <span class="digits__digit-value">
+            <i class="digits__digit-display-value"><h3>3</h3></i>
+            <i class="digits__digit-display-percentage adek">0</i>
+          </span>
+        </div>
+        <div class="digits__digit">
+          <div class="digits__pie-container">
+            <svg class="digits__pie-progress" width="120" height="120" viewBox="0 0 120 120">
+              <circle class="progress__bg " cx="60" cy="60" r="54" fill="white" stroke="#80003c" stroke-width="12"></circle>
+              <circle class="progress__value five" cx="60" cy="60" r="54" fill="none" stroke-opacity="0.6175" stroke-width="12" stroke-dasharray="119.88317333333332,219.40882666666667" stroke-dashoffset="229.58758666666665"></circle>
+            </svg>
+          </div>
+          <span class="digits__digit-value">
+            <i class="digits__digit-display-value">4</i>
+            <i class="digits__digit-display-percentage agwen">0</i>
+          </span>
+        </div>
+        <div class="digits__digit">
+          <div class="digits__pie-container">
+            <svg class="digits__pie-progress" width="120" height="120" viewBox="0 0 120 120">
+              <circle class="progress__bg black" cx="60" cy="60" r="54" fill="none" stroke="#E8EEFC" stroke-width="12"></circle>
+              <circle class="progress__value six" cx="60" cy="60" r="54" fill="none" stroke-opacity="0.6175" stroke-width="12" stroke-dasharray="119.88317333333332,219.40882666666667" stroke-dashoffset="229.58758666666665"></circle>
+            </svg>
+          </div>
+          <span class="digits__digit-value">
+            <i class="digits__digit-display-value"><h3>5</h3></i>
+            <i class="digits__digit-display-percentage abich">0</i>
+          </span>
+        </div>
+        <div class="digits__digit">
+          <div class="digits__pie-container">
+            <svg class="digits__pie-progress" width="120" height="120" viewBox="0 0 120 120">
+              <circle class="progress__bg black" cx="60" cy="60" r="54" fill="none" stroke="#E8EEFC" stroke-width="12"></circle>
+              <circle class="progress__value seven" cx="60" cy="60" r="54" fill="none" stroke-opacity="0.6175" stroke-width="12" stroke-dasharray="119.88317333333332,219.40882666666667" stroke-dashoffset="229.58758666666665"></circle>
+            </svg>
+          </div>
+          <span class="digits__digit-value">
+            <i class="digits__digit-display-value"><h3>6</h3></i>
+            <i class="digits__digit-display-percentage auchiel">0</i>
+          </span>
+        </div>
+        <div class="digits__digit">
+          <div class="digits__pie-container">
+            <svg class="digits__pie-progress" width="120" height="120" viewBox="0 0 120 120">
+              <circle class="progress__bg black" cx="60" cy="60" r="54" fill="none" stroke="#E8EEFC" stroke-width="12"></circle>
+              <circle class="progress__value eight" cx="60" cy="60" r="54" fill="none" stroke-opacity="0.6175" stroke-width="12" stroke-dasharray="119.88317333333332,219.40882666666667" stroke-dashoffset="229.58758666666665"></circle>
+            </svg>
+          </div>
+          <span class="digits__digit-value">
+            <i class="digits__digit-display-value"><h3>7</h3></i>
+            <i class="digits__digit-display-percentage abirio">0</i>
+          </span>
+        </div>
+        <div class="digits__digit">
+          <div class="digits__pie-container">
+            <svg class="digits__pie-progress" width="120" height="120" viewBox="0 0 120 120">
+              <circle class="progress__bg black" cx="60" cy="60" r="54" fill="none" stroke="#E8EEFC" stroke-width="12"></circle>
+              <circle class="progress__value nine" cx="60" cy="60" r="54" fill="" stroke-opacity="0.6175" stroke-width="12" stroke-dasharray="119.88317333333332,219.40882666666667" stroke-dashoffset="229.58758666666665"></circle>
+            </svg>
+          </div>
+          <span class="digits__digit-value">
+            <i class="digits__digit-display-value"><h3>8</h3></i>
+            <i class="digits__digit-display-percentage aboro">0</i>
+          </span>
+        </div>
+        <div class="digits__digit">
+          <div class="digits__pie-container">
+            <svg class="digits__pie-progress" width="120" height="120" viewBox="0 0 120 120">
+              <circle class="progress__bg black" cx="60" cy="60" r="54" fill="none" stroke="#E8EEFC" stroke-width="12"></circle>
+              <circle class="progress__value ten" cx="60" cy="60" r="54" fill="" stroke-opacity="0.6175" stroke-width="12" stroke-dasharray="119.88317333333332,219.40882666666667" stroke-dashoffset="229.58758666666665"></circle>
+            </svg>
+          </div>
+          <span class="digits__digit-value">
+            <i class="digits__digit-display-value"><h3>9</h3></i>
+            <i class="digits__digit-display-percentage ochiko">0</i>
+          </span>
+        </div>
+       
+      </div>
+      
+      
+
+    </div>
+    <div class="footer">
+      <div class="contain">
+        <div class="email"><small>denaradigit@gmail.com</small></div>
+        <div class="contact"><small>+254719343802</small></div>
+      </div>
+    </div>
+  </body>
+  <script type="module" src="index.js"></script>
+  <script type="module" src="login.js"></script>
+  <!-- <script type="module" src="custom.js"></script> -->
+</html>
